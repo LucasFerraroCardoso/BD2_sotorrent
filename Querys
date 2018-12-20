@@ -1,0 +1,43 @@
+Para conseguir as 5000 perguntas utilizadas no algoritmo:
+  SELECT * FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 limit 5000;
+  
+Total de perguntas.
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1;
+
+Total de perguntas com resposta
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 AND AnswerCount > 0;
+
+Perguntas que começam com 'Wh'
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 AND Body LIKE '<p>Wh%';
+
+Perguntas que começam com 'Wh' com resposta
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 AND Body LIKE '<p>Wh%' AND AnswerCount > 0;
+
+Perguntas com código
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 AND Body LIKE '%<code>%';
+
+Perguntas com código com resposta
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 AND Body LIKE '%<code>%' AND AnswerCount > 0;
+
+Perguntas com polidez
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 AND Body LIKE '%thank%'
+  OR Body LIKE '%thanks%'
+  OR Body LIKE '%please%'
+  OR Body LIKE '%could%'
+  OR Body LIKE '%would%'
+  OR Body LIKE '%help%';
+
+Perguntas com polidez com resposta
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 AND Body LIKE '%thank%'
+  OR Body LIKE '%thanks%'
+  OR Body LIKE '%please%'
+  OR Body LIKE '%could%'
+  OR Body LIKE '%would%'
+  OR Body LIKE '%help%'
+  AND AnswerCount > 0;
+
+Perguntas com titulos menores que 50 caracteres
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 AND length(Title) < 51;
+
+Perguntas cujo título tem menos de 50 caracteres
+  SELECT Id FROM [sotorrent-org:2018_12_09.Posts] WHERE PostTypeId = 1 AND length(Title) < 51 AND AnswerCount > 0;
