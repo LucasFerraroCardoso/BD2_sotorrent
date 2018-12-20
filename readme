@@ -1,1 +1,6 @@
 Trabalho de Banco de Dados II
+
+Este projeto possui um total de três arquivos. Um contendo as querys utilizadas no Google Big Query para fazer a análise de
+características que auxiliem na probabilidade da pergunta ser respondida. Um arquivo .csv contendo um total de 5000 perguntas
+que foi exportado do sotorrent e um algoritmo em python que utiliza tais caracteristicas para classificar se uma nova pergunta
+probabilisticamente possui resposta.
